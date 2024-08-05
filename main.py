@@ -45,7 +45,7 @@ if __name__ == '__main__':
     print('Executing Pandas apply\n')
     tqdm.pandas()
     df_sc[['Sunrise', 'Sunset', 'Daylight']] = df_sc.progress_apply(lambda x: f.sun(x),
-                                                                    axis=1)
+                                                                    axis=1).to_list()
     end_time_sp = time.time()
 
     elapsed_time_sp = end_time_sp - start_time_sp
